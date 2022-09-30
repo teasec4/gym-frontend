@@ -38,7 +38,7 @@ const Home = () => {
         console.log(banch1)
         setModalLoading(true)
 
-        const response = await fetch('/api/user/update/banch', {
+        const response = await fetch('https://gym-backend-1.herokuapp.com/api/user/update/banch', {
             method: "PATCH",
             body: JSON.stringify(banch1),
             headers: {
@@ -58,7 +58,7 @@ const Home = () => {
         const squad1 = {squad}
         console.log(squad)
 
-        const response = await fetch('/api/user/update/squad', {
+        const response = await fetch('https://gym-backend-1.herokuapp.com/api/user/update/squad', {
             method: "PATCH",
             body: JSON.stringify(squad1),
             headers: {
@@ -77,7 +77,7 @@ const Home = () => {
         const deadlift1 = {deadlift}
         console.log(deadlift1)
 
-        const response = await fetch('/api/user/update/deadlift', {
+        const response = await fetch('https://gym-backend-1.herokuapp.com/api/user/update/deadlift', {
             method: "PATCH",
             body: JSON.stringify(deadlift1),
             headers: {
@@ -99,7 +99,7 @@ const Home = () => {
         const fetchInfo = async () => {
             dispatch({type:"FETCH_REQUEST"})
             try{
-                const response = await fetch('/api/user/get', {
+                const response = await fetch('https://gym-backend-1.herokuapp.com/api/user/get', {
                     headers: {
                         'Authorization': `Bearer ${user.token}`
                     }
