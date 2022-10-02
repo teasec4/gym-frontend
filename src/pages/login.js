@@ -29,10 +29,10 @@ const Login = () => {
                     type={'password'}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className={isLoading ? 'btn btn-secondary mt-2' : 'btn btn-success mt-2'} disabled={isLoading} type={'submit'}>
+                <button className={isLoading ? 'btn-signup mt-2' : 'btn-login mt-2'} disabled={isLoading} type={'submit'}>
                     Log in
                 </button>
-                {error && <div className={'text-danger'}>
+                {error && <div className={'text-danger mt-3'}>
                                 {error}
                             </div>}
             </form>

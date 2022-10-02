@@ -1,6 +1,6 @@
 import React from 'react';
 import {motion} from 'framer-motion'
-import {AiOutlineLoading} from "react-icons/ai";
+import {BiLoader} from "react-icons/bi";
 
 
 const Loader = () => {
@@ -10,7 +10,7 @@ const Loader = () => {
             animate={{ rotateZ: 0 , color:'green'}}
             transition={{duration: 0.5, yoyo: Infinity}}
         >
-            <AiOutlineLoading/>
+            <BiLoader/>
         </motion.div>
     );
 };

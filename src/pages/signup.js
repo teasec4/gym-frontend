@@ -21,15 +21,15 @@ const Signup = () => {
             <form onSubmit={handleSubmit} className='d-flex flex-column'>
                 <h3 className="mt-2 fw-bold">Sign Up</h3>
                 <label>Email:</label>
-                <input type={'email'} onChange={(e) => setEmail(e.target.value)}/>
+                <input type={'email'} placeholder="example@example.com" onChange={(e) => setEmail(e.target.value)}/>
                 <label>Password:</label>
-                <input type='password' onChange={(e) => setPassword(e.target.value)}/>
+                <input type='password' placeholder="make me stonger" onChange={(e) => setPassword(e.target.value)}/>
                 <label>Confirm Password:</label>
-                <input type='password' onChange={(e) => setPassword2(e.target.value)}/>
-                <button  disabled={isLoading} type='submit' className="btn btn-success mt-2">
+                <input type='password' placeholder="do not hurry up" onChange={(e) => setPassword2(e.target.value)}/>
+                <button  disabled={isLoading} type='submit' className="mt-2 btn-login">
                     Sign Up
                 </button>
-                {error && <div className="text-danger">
+                {error && <div className="text-danger mt-3">
                             {error}
                         </div>}
             </form>

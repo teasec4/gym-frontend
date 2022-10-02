@@ -122,7 +122,7 @@ const Home = () => {
     return(
         <div>
             {loading && (
-                <div className='d-flex justify-content-center'>
+                <div className='d-flex justify-content-center mt-5'>
                     <Loader/>
                 </div>
             )}
