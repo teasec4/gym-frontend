@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useState, CSSProperties } from "react";
 import Loader from "../components/Loader";
 import Modal from "../components/Modal/Modal";
 import {useSignup} from '../hooks/useSignup'
+import SquareLoader from 'react-spinners/SquareLoader'
+
+const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "#4B2D9F",
+  };
 
 const Signup = () => {
 
@@ -9,6 +16,7 @@ const Signup = () => {
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
     const {signup, error, isLoading} = useSignup()
+    let [color, setColor] = useState('#4B2D9F')
     const [modalActive, setModalActive] = useState(false)
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -23,7 +31,7 @@ const Signup = () => {
                 <label>Email:</label>
                 <input type={'email'} placeholder="example@example.com" onChange={(e) => setEmail(e.target.value)}/>
                 <label>Password:</label>
-                <input type='password' placeholder="make me stonger" onChange={(e) => setPassword(e.target.value)}/>
+                <input type='password' placeholder="make me stronger" onChange={(e) => setPassword(e.target.value)}/>
                 <label>Confirm Password:</label>
                 <input type='password' placeholder="do not hurry up" onChange={(e) => setPassword2(e.target.value)}/>
                 <button  disabled={isLoading} type='submit' className="mt-2 btn-login">
@@ -35,7 +43,7 @@ const Signup = () => {
             </form>
             <Modal active={isLoading} setActive={setModalActive}>
                 <div className="d-flex justify-content-center">
-                    <Loader/>
+                    <SquareLoader color={color} loading={isLoading} cssOverride={override} size={80}/>
                 </div>
             </Modal>
         </div>

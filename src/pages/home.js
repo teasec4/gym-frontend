@@ -128,30 +128,30 @@ const Home = () => {
             )}
             {!loading && (
                 <>
-                <Description setActive={setModalActive} info={info.banchpress} title={'BENCHPRESS'}/>
-            <Modal active={moodalActive} setActive={setModalActive}>
-                <div className='d-flex flex-column justify-content-center align-items-center'>
-                    <p>BENCHPRESS</p>
-                    <input type='number' value={banchpress} onChange={(e) => setBanch(e.target.value)} />
-                    <button disabled={(banchpress.toString().length < 1 ? true : false)} onClick={handleSubmit} className='btn btn-success mt-2'>ADD</button>
-                </div>
-            </Modal>
-            <Description setActive={setModalActive2} info={info.squad} title={'SQUAD'}/>
-            <Modal active={modalActive2} setActive={setModalActive2}>
-                <div className='d-flex flex-column justify-content-center align-items-center'>
-                    <p>SQUAD</p>
-                    <input type='number' value={squad} onChange={(e) => setSquad(e.target.value)} />
-                    <button  disabled={(squad.toString().length < 1 ? true : false)} onClick={handleSubmit2} className='btn btn-success mt-2'>ADD</button>
-                </div>
-            </Modal>
-            <Description setActive={setModalActive3} info={info.deadlift} title={'DEADLIFT'}/> 
-            <Modal active={modalActive3} setActive={setModalActive3}>
-                <div className='d-flex flex-column justify-content-center align-items-center'>
-                    <p>DEADLIFT</p>
-                    <input type='number' value={deadlift} onChange={(e) => setDeadlift(e.target.value)} />
-                    <button disabled={(deadlift.toString().length < 1 ? true : false)} onClick={handleSubmit3} className='btn btn-success mt-2'>ADD</button>
-                </div>
-            </Modal>
+                    <Description setActive={setModalActive} info={info.banchpress} title={'BENCHPRESS'}/>
+                <Modal active={moodalActive} setActive={setModalActive}>
+                    <div className='d-flex flex-column justify-content-center align-items-center'>
+                        <p className='fw-bold fs-1'>BENCHPRESS</p>
+                        <input type='number' className='fs-2' style={{width:'100px'}} value={banchpress} onChange={(e) => setBanch(e.target.value)} />
+                        <button disabled={(banchpress.toString().length < 1 ? true : false)} onClick={handleSubmit} className={(banchpress.toString().length < 1 ? 'btn-add nonactive mt-2' : 'btn-add mt-2')}>ADD</button>
+                    </div>
+                </Modal>
+                <Description setActive={setModalActive2} info={info.squad} title={'SQUAD'}/>
+                <Modal active={modalActive2} setActive={setModalActive2}>
+                    <div className='d-flex flex-column justify-content-center align-items-center'>
+                        <p className='fw-bold fs-1'>SQUAD</p>
+                        <input type='number' className='fs-2' style={{width:'100px'}} value={squad} onChange={(e) => setSquad(e.target.value)} />
+                        <button  disabled={(squad.toString().length < 1 ? true : false)} onClick={handleSubmit2} className={(squad.toString().length < 1 ? 'btn-add nonactive mt-2' : 'btn-add mt-2')}>ADD</button>
+                    </div>
+                </Modal>
+                <Description setActive={setModalActive3} info={info.deadlift} title={'DEADLIFT'}/> 
+                <Modal active={modalActive3} setActive={setModalActive3}>
+                    <div className='d-flex flex-column justify-content-center align-items-center'>
+                        <p className='fw-bold fs-1'>DEADLIFT</p>
+                        <input type='number' className='fs-2' style={{width:'100px'}} value={deadlift} onChange={(e) => setDeadlift(e.target.value)} />
+                        <button disabled={(deadlift.toString().length < 1 ? true : false)} onClick={handleSubmit3} className={(deadlift.toString().length < 1 ? 'btn-add nonactive mt-2' : 'btn-add mt-2')}>ADD</button>
+                    </div>
+                </Modal>
                 
                 </>
             )}

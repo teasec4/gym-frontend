@@ -21,11 +21,13 @@
 .modal__content{
     padding: 20px;
     border-radius: 10px;
-    background: white;
+    background: gold;
     width: 80vw;
+    color: black;
     transform: scale(0.5);
     transition: 0.4s all;
 }
+
 
 .modal__content.active{
     transform: scale(1);

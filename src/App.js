@@ -1,4 +1,5 @@
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import Footer from './components/footer';
 import Nav from './components/Nav';
 import { useAuthContext } from './hooks/useAuthContext';
 import Home from './pages/home';
@@ -11,7 +12,8 @@ function App() {
   const {user} = useAuthContext()
 
   return (
-    <div>
+    <div className='page-container'>
+      <div className='content-wrap'>
         <BrowserRouter>
           <Nav/>
             <Routes>
@@ -25,6 +27,8 @@ function App() {
               />
             </Routes> 
         </BrowserRouter>
+     </div>
+        <Footer/>
     </div>
   );
 }

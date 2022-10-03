@@ -1,12 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState, CSSProperties} from 'react'
 import {useLogin} from '../hooks/useLogin'
 import Modal from '../components/Modal/Modal'
 import Loader from '../components/Loader'
+import SquareLoader from 'react-spinners/SquareLoader'
+
+const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "#4B2D9F",
+  };
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {login, error, isLoading} = useLogin()
+    let [color, setColor] = useState('#4B2D9F')
     const [modalActive, setModalActive] = useState(false)
 
     const handleSubmit = async (e) => {
@@ -38,7 +46,7 @@ const Login = () => {
             </form>
             <Modal active={isLoading} setActive={setModalActive}>
                 <div className="d-flex justify-content-center">
-                    <Loader/>
+                <SquareLoader color={color} loading={isLoading} cssOverride={override} size={80}/>
                 </div>
             </Modal>
         </div>

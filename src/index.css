@@ -18,6 +18,12 @@
   /* color: #A59CD3; */
   color: black;
   font-family: 'Silkscreen', cursive;
+  transition: 0.3s all ease-in-out;
+}
+
+.description-background:active{
+  transform: scale(0.9);
+  transition: 0.3s ease-in-out all;
 }
 
 
@@ -54,4 +60,32 @@
   border: 2px gold solid;
   color: gold;
   border-radius: 1px;
+}
+
+.btn-add{
+  background: #4B2D9F;
+  padding: 8px 16px;
+  color: white;
+  border: white;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 1.5rem;
+
+}
+
+.btn-add.nonactive{
+  background: lightgray;
+}
+
+/* 
+  для закрепления футера внизу
+*/
+.page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap{
+  flex: 1;
 }

@@ -38,7 +38,7 @@ const Welcome = () => {
                        goal is to get so overly muscular
                     </p>
                     <p>
-                        you can just training anywere from <span style={{color:'#4B2D9F'}}>30</span> to <span style={{color:'#4B2D9F'}}>80</span>percent of your one rep max 
+                        you can just training anywere from <span style={{color:'#4B2D9F'}}>30</span> to <span style={{color:'#4B2D9F'}}>80</span> percent of your one rep max 
                     </p>
                    
                     <p className="fw-bold fs-2">
