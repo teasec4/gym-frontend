@@ -82,6 +82,8 @@ const Home = () => {
     }
 
 
+
+
     useEffect(() => {
         const fetchInfo = async () => {
             dispatch({type:"FETCH_REQUEST"})

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Footer from './components/footer';
 import Nav from './components/Nav';
@@ -12,15 +13,17 @@ function App() {
 
   const {user} = useAuthContext()
 
+  const [click, setClick] = useState(false)
+
   return (
     <div className='page-container'>
       <div className='content-wrap'>
         <BrowserRouter>
-          <Nav/>
+          <Nav click={click} setClick={setClick}/>
             <Routes>
               <Route path='/' element={!user ? <Welcome/> : <Home/>}
               />
-              <Route path={'/dashboard'} element={user ? <Home/> : <Navigate to='/login'/>}
+              <Route path={'/dashboard'}  element={user ? <Home/> : <Navigate to='/login'/>}
               />
               <Route path={'/login'} element={!user ? <Login/> : <Navigate to='/dashboard'/>}
               />
