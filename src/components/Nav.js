@@ -17,7 +17,9 @@ const Nav = () => {
 
             {user && (
                     <div className="nav-background shadow text-light d-flex justify-content-between align-items-center container-fluid p-2">
-                        <p className="p-0 m-0 d-flex align-items-center">{user.email}</p>
+                        <Link to='/achive' className="nolink">
+                            <p className="p-0 m-0 d-flex align-items-center nolink">{user.email}</p>
+                        </Link>
                         <button className="btn-logout" onClick={handleClick}>
                             LOGOUT
                         </button>

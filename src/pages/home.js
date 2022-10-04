@@ -5,22 +5,12 @@ import Loader from '../components/Loader'
 import Description from '../components/Description'
 import Modal from '../components/Modal/Modal'
 import { useAuthContext } from '../hooks/useAuthContext'
+import {useContentContext} from '../hooks/useContentContext'
 
-const reduser = (state, action) => {
-        switch(action.type){
-            case "FETCH_REQUEST":
-                return{...state, loading: true}
-            case "FETCH_SUCCESS":
-                return{...state, loading:false, info:action.payload}
-            case "FETCH_FAIL":
-                return{...state, loading:false, error: action.payload}
-            default:
-                return state
-        }
-    }
 
 const Home = () => {
     const {user} = useAuthContext()
+    const {info, loading, error, dispatch} = useContentContext()
     const [banchpress, setBanch] = useState('')
     const [squad, setSquad] = useState('')
     const [deadlift, setDeadlift] = useState('')
@@ -91,9 +81,6 @@ const Home = () => {
         }
     }
 
-    const [{loading, error, info}, dispatch] = useReducer(reduser, {loading:true, error:'', info:[]})
-
-    
 
     useEffect(() => {
         const fetchInfo = async () => {
