@@ -21,15 +21,15 @@ function App() {
         <BrowserRouter>
           <Nav click={click} setClick={setClick}/>
             <Routes>
-              <Route path='/' element={!user ? <Welcome/> : <Home/>}
+              <Route path={'/'} element={!user ? <Welcome/> : <Home/>}
+              />
+              <Route path={'/achive'} element={user ? <Achive/> : <Navigate to='/'/>}
               />
               <Route path={'/dashboard'}  element={user ? <Home/> : <Navigate to='/login'/>}
               />
               <Route path={'/login'} element={!user ? <Login/> : <Navigate to='/dashboard'/>}
               />
               <Route path={'/signup'} element={!user ?<Signup/> : <Navigate to='/dashboard'/>}
-              />
-              <Route path={'/achive'} element={user ? <Achive/> : <Navigate to='/login'/>}
               />
             </Routes> 
         </BrowserRouter>

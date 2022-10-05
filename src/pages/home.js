@@ -39,7 +39,8 @@ const Home = () => {
         if(response.ok){
             setBanch('')
             setModalLoading(false)
-            window.location.reload()
+            fetchInfo()
+            setModalActive(false)
         }
     }
     const handleSubmit2 = async (e) => {
@@ -58,7 +59,8 @@ const Home = () => {
         })
         if(response.ok){
             setSquad('')
-            window.location.reload()
+            fetchInfo()
+            setModalActive2(false)
         }
     }
     const handleSubmit3 = async (e) => {
@@ -77,34 +79,33 @@ const Home = () => {
         })
         if(response.ok){
             setDeadlift('')
-            window.location.reload()
+            fetchInfo()
+            setModalActive3(false)
         }
     }
 
+    const fetchInfo = async () => {
+        dispatch({type:"FETCH_REQUEST"})
+        try{
+            const response = await fetch('https://gym-backend-1.herokuapp.com/api/user/get', {
+                headers: {
+                    'Authorization': `Bearer ${user.token}`
+                }
+            })
+            const json = await response.json()
+            if(response.ok){
+                dispatch({type:"FETCH_SUCCESS", payload:json})
+                console.log(json)
+            }
 
+
+        } catch (error) {
+            dispatch({type:"FETCH_FAIL", payload:error.message})
+        }
+     }
 
 
     useEffect(() => {
-        const fetchInfo = async () => {
-            dispatch({type:"FETCH_REQUEST"})
-            try{
-                const response = await fetch('https://gym-backend-1.herokuapp.com/api/user/get', {
-                    headers: {
-                        'Authorization': `Bearer ${user.token}`
-                    }
-                })
-                const json = await response.json()
-                if(response.ok){
-                    dispatch({type:"FETCH_SUCCESS", payload:json})
-                    console.log(json)
-                }
-
-
-            } catch (error) {
-                dispatch({type:"FETCH_FAIL", payload:error.message})
-            }
-         }
-
         fetchInfo()
     }, [])
 

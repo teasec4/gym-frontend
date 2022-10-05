@@ -8,7 +8,7 @@ const ProgressBar = ({done, goal, text}) => {
             "width": `${done}%`
         }
         setStyle(newStyle)
-    }, 500)
+    }, 100)
     return (
         <div className="progress">
             <div className="progress-done" style={style}>    
