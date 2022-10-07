@@ -123,7 +123,7 @@ const Achive = () => {
 
     return (
         <div> 
-            <div className="content fs-3 text-center">
+            <div className="content fs-3 mt-2 mb-2 text-center">
               {user.email} 
             </div>
             <div className="mt-2 container fw-bold">

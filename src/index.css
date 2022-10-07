@@ -102,16 +102,16 @@
 .progress {
 	/* background-color: #d8d8d8; */
   background-color: rgba(249, 212, 2, 0.692);
-	border-radius: 20px;
+	
 	position: relative;
-	height: 30px;
+	height: 40px;
 	width: 100%;
 }
 
 .progress-done {
 	background: #4B2D9F;
 	box-shadow: 0 3px 3px -5px #4B2D9F, 0 2px 5px #4B2D9F;
-	border-radius: 20px;
+	
 	color: #fff;
 	display: flex;
 	align-items: center;
