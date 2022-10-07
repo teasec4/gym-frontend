@@ -30,7 +30,7 @@ const Nav = ({click, setClick}) => {
                             animate={{ transform: "scale(1)" , color: 'gold'}}
                             transition={{duration: 1, yoyo: Infinity, ease:"easeOut"}}
                             className="p-0 m-0 d-flex align-items-center nolink" onClick={handleChange}>
-                                {click ? "home" : `${user.email}`}
+                                {click ? "home" : `achive`}
                             </motion.p>
                         </Link>
                         <button className="btn-logout" onClick={handleClick}>

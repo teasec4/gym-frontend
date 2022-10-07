@@ -124,7 +124,7 @@ const Achive = () => {
     return (
         <div> 
             <div className="content fs-3 text-center">
-                Achive page
+              {user.email} 
             </div>
             <div className="mt-2 container fw-bold">
                 Bench:
